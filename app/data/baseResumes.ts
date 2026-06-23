@@ -147,7 +147,7 @@ University of Illinois at Chicago
 
   {
     name: 'Gong Chen+',
-    themeId: 'professional',
+    themeId: 'ocean',
     resumeText: `
 Senior Full Stack Software Engineer
 Gong Chen
@@ -192,7 +192,7 @@ University of Michigan
   },
   {
     name: 'Gong Chen+*',
-    themeId: 'professional',
+    themeId: 'indigo',
     resumeText: `
 Senior Full Stack Software Engineer (AI/ML Platforms)
 Gong Chen
@@ -237,7 +237,7 @@ University of Michigan
   },
   {
     name: 'Gong Chen*',
-    themeId: 'professional',
+    themeId: 'emerald',
     resumeText: `
 Senior AI/ML Engineer
 Gong Chen
