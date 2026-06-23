@@ -41,7 +41,7 @@ Software Engineer at Blue Cross and Blue Shield of Illinois, Montana, New Mexico
 • Coordinated with distributed Agile teams to deliver reliable production releases on schedule.
 
 
-Software Engineer at Avande: 06/2019 – 01/2019
+Software Engineer at Avande: 06/2016 – 01/2019
 • Developed customer-facing dashboards and internal backend workflows using React and Python/Node.js.
 • Enhanced SQL and relational database workflows to support high-volume transactional data.
 • Delivered iterative feature updates in remote Agile teams, ensuring maintainability and scalability.
@@ -86,7 +86,7 @@ Software Engineer at Blue Cross and Blue Shield of Illinois, Montana, New Mexico
 • Partnered with remote cross-functional teams to deliver reliable production releases in Agile sprints.
 
 
-Software Engineer at Avande: 06/2019 – 01/2019
+Software Engineer at Avande: 06/2016 – 01/2019
 • Built frontend dashboards and backend services integrating predictive analytics for financial workflows.
 • Developed RESTful APIs and relational database queries to support high-volume data processing for ML pipelines.
 • Collaborated with Agile engineering teams to deliver iterative, maintainable AI/ML-enhanced features.
@@ -131,7 +131,7 @@ Software Engineer at Blue Cross and Blue Shield of Illinois, Montana, New Mexico
 • Delivered production-ready ML-enabled features in remote Agile teams, ensuring reliability and scalability.
 
 
-Software Engineer at Avande: 06/2019 – 01/2019
+Software Engineer at Avande: 06/2016 – 01/2019
 • Built backend services and Python-based pipelines for fintech predictive analytics and ML models.
 • Integrated ML insights into internal workflows via REST APIs and relational databases.
 • Collaborated in cross-functional Agile teams to deliver iterative, maintainable backend features.
