@@ -281,126 +281,121 @@ University of Michigan
     `
   },
 
-//   {
-//     name: 'Kevin Patel+',
-//     themeId: 'professional',
-//     resumeText: `
-// Senior Full Stack Software Engineer
-// Kevin Patel
-// kevin.patell.nova.ww@outlook.com
-// (325) 999-7819
-// Tyler, TX 75702
+  {
+    name: 'Mitch Lin',
+    themeId: 'neutral-sans',
+    resumeText: `
+Senior Software Engineer
+Mitch Lin
+mitchlin888@gmail.com
+(917) 672-7603
+Austin, TX
 
-// Summary:
-// Senior Full Stack Software Engineer with over 10 years of experience developing, designing, and deploying scalable, high-performance applications. Extensive background in both backend and frontend development, with expertise in Java, Spring, JavaScript, web services, and relational databases. Skilled in building enterprise applications for B2B and B2C environments, and delivering solutions that streamline business processes and enhance user experiences. Passionate about solving complex technical challenges and mentoring junior developers.
+Summary:
+Senior Full Stack Software Engineer with over 10 years of experience developing, designing, and deploying scalable, high-performance applications. Extensive background in both backend and frontend development, with expertise in Java, Spring, JavaScript, web services, and relational databases. Skilled in building enterprise applications for B2B and B2C environments, and delivering solutions that streamline business processes and enhance user experiences. Passionate about solving complex technical challenges and mentoring junior developers.
 
-// Technical Skills:
-// • Frontend: JavaScript, HTML5, CSS, React, Angular, Vue.js
-// • Backend: Java, Spring, RESTful APIs, Web Services
-// • Databases: SQL, MySQL, PostgreSQL, Relational Databases
-// • Version Control: Git, GitHub, Bitbucket
-// • Other: Agile Methodologies, Code Reviews, Unit Testing
+Technical Skills:
+• Frontend: JavaScript, HTML5, CSS, React, Angular, Vue.js
+• Backend: Java, Spring, RESTful APIs, Web Services
+• Databases: SQL, MySQL, PostgreSQL, Relational Databases
+• Version Control: Git, GitHub, Bitbucket
+• Other: Agile Methodologies, Code Reviews, Unit Testing
 
-// Experience:
-// Senior Full Stack Software Engineer at BrightOps: 09/2024 – 04/2026
-// • Spearheaded development of a production LLM-powered tutoring agent using TypeScript, React, Node, and Pinecone to serve 3,200 students, improving personalized mastery recommendations by 27%.
-// • Implemented a coach-facing dashboard with RAG retrieval over Postgres-backed student records and vector embeddings, reducing information lookup time by 62% for guides.
-// • Piloted an AI coding workflow integrating Claude Code and Cursor into weekly shipping cadence, increasing dev velocity by 42% and lowering PR cycle time from 3 days to 1.6 days.
-// • Orchestrated end-to-end eval pipelines using LangSmith and custom regression tests that caught 88% of prompt regressions before production deploys.
-// • Tuned vector search and embedding pipelines with Pinecone and FAISS, increasing retrieval precision by 21% while maintaining 99th percentile latency under 180 ms.
+Experience:
+Senior Full Stack Software Engineer at Aurora: 09/2023 – Present
+• Architect and scale Node.js microservices powering a high-traffic e-commerce platform processing millions of monthly transactions.
+• Build fullstack features using React, Next.js, and TypeScript, delivering responsive, high-performance storefront experiences.
+• Integrate GraphQL APIs to unify product, order, and customer data, reducing frontend query complexity and boosting performance.
+• Drive revenue growth by developing AI-powered recommendation engines in JavaScript/TypeScript, increasing upsell and cross-sell conversions by 25%.
+• Enhance search and discovery with NLP-driven product search and personalized rankings, improving conversion rates by 20%.
+• Implement real-time inventory and pricing systems using event-driven architecture with Node.js, Kafka, and Redis.
+• Secure payment workflows by integrating Stripe, PayPal, and custom gateways with strong validation and fraud detection logic.
 
+Software Engineer at Samsara: 07/2020 – 08/2023
+• Developed backend microservices using Nest.js and TypeScript to support Samsara’s IoT Connected Operations Cloud, building scalable REST APIs and modular services for high-volume telemetry data.
+• Built dynamic, responsive frontend dashboards using React, providing real-time operational insights to enterprise clients.
+• Designed and optimized REST and GraphQL APIs to efficiently process telemetry data from millions of IoT devices.
+• Enhanced distributed data pipelines with Kafka, Redis, and AWS Lambda, reducing processing latency for analytics dashboards by 35%.
+• Partnered with data engineers to implement scalable time-series storage solutions using PostgreSQL, DynamoDB, and InfluxDB.
+• Integrated AI-driven analytics into React dashboards, displaying predictive insights on fleet performance, driver behavior, and operational KPIs.
 
-// Senior Full Stack Engineer at Nordstrom: 05/2021 – 07/2024
-// • Built healthcare-grade retrieval and RAG features using Node, TypeScript, LangChain-style adapters, and Postgres to serve clinical decision tools across 120k patient records.
-// • Automated regression tests and LLM evals for clinical copilots, producing daily eval reports and catching 3 major hallucination classes before releases.
-// • Scaled microservices in AWS ECS and EKS to support 2x concurrency spikes during morning rounds, maintaining 99.95% uptime over 12 months.
-// • Hardened API security with OAuth2, JWT scopes, and role-based access controls, lowering unauthorized access attempts by 100% in tracked windows.
-// • Measured feature impact with A/B experiments and analytics, demonstrating a 19% lift in task completion for nurses using the AI assistant.
+Backend Engineer at Cisco Meraki: 09/2018 – 06/2020
+• Worked on a new proprietary distributed IP VPN in Golang for which all Meraki networking devices will eventually use to connect to the cloud backend. This VPN would help meet Federal Information Processing Standards (FIPS) certification and unlock new markets.
+• One of two engineers implementing improvements such as data tablet debugger to proprietary time-series C++ database Little Table.
+• Improved crash resiliency that prevented a persistent paging crash-looping outage.
+• Prototyped Little Table to use Google protobufs (gRPC) and Docker to allow significantly faster connection speeds and increased TLS security and environment control to meet FIPS certification and unlock new markets.
+• Implemented a foreign data wrapper (FDW) for Little Table in Postgres to simplify developer queries and improve query optimization.
 
-
-// Full Stack Engineer at Zapier: 01/2019 – 02/2021
-// • Designed a TypeScript/Node service that supported credit workflow automation and integrated an LLM-based assistant for internal analysts, cutting manual processing time by 37% across 4 teams.
-// • Developed secure Postgres schemas and transactional APIs to track sensitive financial events, improving data integrity and enabling 24x7 reconciliation.
-// • Secured LLM integrations with encryption-at-rest, request-level logging, and fine-grained IAM policies, passing internal security audits with zero critical findings.
-// • Reported monthly metrics and ROI for AI features to product and leadership, demonstrating a 21% reduction in SLA violations after rollout.
-
-
-// Full Stack Software Engineer at Calendly : 11/2017 – 11/2018
-// • Engineered backend-integrated user workflows in Node and Python to support fintech payments, processing $25M+ monthly with end-to-end monitoring.
-// • Deployed containerized services with Docker and Kubernetes, achieving 99.9% SLA for core transaction paths across 6 microservices.
-// • Synced product telemetry with data warehouse and ETL, enabling ad hoc analytics queries across 4TB of event data and 12M daily events.
-// • Rewrote a legacy onboarding flow in React and TypeScript, increasing activation rate by 14% and cutting frontend bundle size by 36%.
-
-
-// Junior Software Engineer at Cognizant : 08/2016 – 09/2017
-// • Delivered React-based frontend features for HCM and analytics suites used by 2,500+ enterprise customers, improving dashboard load performance by 48%.
-// • Standardized CSS and theming across product modules, cutting visual regressions by 71% in major releases.
-// • Converted legacy widgets to TypeScript components, increasing compile-time safety and decreasing runtime bugs by 39%.
-// • Assisted backend teams with API contract definitions and Postgres query tuning, improving end-to-end page rendering times by 24%.
+Software Engineer at Zillow : 04/2016 – 03/2018
+• Developed backend services with Node.js and Java to power Zillow’s real estate platform serving 36M+ monthly users.
+• Enhanced Zestimate valuation models by integrating new property datasets and supporting scalable data pipelines.
+• Optimized API and backend service performance, reducing response times and improving data delivery for frontend applications.
+• Refactored legacy codebases and modularized services to improve system scalability, maintainability, and reliability.
+• Built React-based frontend integrations to deliver accurate property information and interactive user experiences.
 
 
-// Education:
-// Bachelor of Science (BS), Information Technology | 2012 – 2016
-// Jones College
-// `
-//   },
-//   {
-//     name: 'Kevin Patel+*',
-//     themeId: 'midnight',
-//     resumeText: `
-// Senior Full Stack Software Engineer
-// Kevin Patel
-// kevin.patell.nova.ww@outlook.com
-// (325) 999-7819
-// Tyler, TX 75702
+Education:
+UC Berkeley College of Engineering
+Bachelor's Degree, Electrical Engineering and Computer Science
+`
+  },
+  {
+    name: 'Jordan Tan*',
+    themeId: 'neutral-executive',
+    resumeText: `
+Senior Full Stack Software Engineer
+Jordan Tan
+jordanashleytan74@gmail.com
+Palm Bay, FL
 
-// Summary:
-// Senior Full Stack Engineer with 10+ years of experience building scalable, high-performance web and AI/ML-enabled platforms. Experienced in Python, Node.js, TypeScript, React, and cloud-based backend services. Skilled in designing and deploying AI/ML pipelines, vector search, and production ML systems, collaborating with cross-functional Agile teams, and delivering solutions in fintech, healthcare, and SaaS environments.
+Summary:
+Full-Stack Engineer with 10 years of experience building secure, scalable web applications with a strong focus on fintech, payments, and compliance-driven platforms. Skilled in designing payment flows, ledgers, and reconciliation systems with ACH debit/credit, card integrations, and sponsor bank APIs. Hands-on expertise in full-stack engineering, DevOps, and CI/CD pipelines. Adept at working with compliance advisors to implement KYC, NACHA, Reg E, and OFAC processes while ensuring fault-tolerant, scalable architectures that support high user adoption.
 
-// Technical Skills:
-// • Backend & AI/ML Platforms: Python, Node.js, TypeScript, RESTful APIs, serverless ML integration, vector search (Pinecone, FAISS), ML evaluation pipelines
-// • Frontend: React, Angular, Vue.js, HTML5, CSS, TypeScript
-// • Databases: SQL, PostgreSQL, MySQL, relational databases, transactional data workflows
-// • Cloud & DevOps: AWS (ECS, EKS, Lambda, S3), Docker, Kubernetes, CI/CD pipelines
-// • Testing & QA: Unit testing, integration testing, regression testing, ML evaluation pipelines
-// • Collaboration & Agile: Jira, GitHub, Git, Bitbucket, cross-functional Agile sprints
+Technical Skills:
+• Backend & AI/ML Platforms: Python, Node.js, TypeScript, RESTful APIs, serverless ML integration, vector search (Pinecone, FAISS), ML evaluation pipelines
+• Frontend: React, Angular, Vue.js, HTML5, CSS, TypeScript
+• Databases: SQL, PostgreSQL, MySQL, relational databases, transactional data workflows
+• Cloud & DevOps: AWS (ECS, EKS, Lambda, S3), Docker, Kubernetes, CI/CD pipelines
+• Testing & QA: Unit testing, integration testing, regression testing, ML evaluation pipelines
+• Collaboration & Agile: Jira, GitHub, Git, Bitbucket, cross-functional Agile sprints
 
-// Experience:
-// Senior Full Stack Engineer - AI/ML Platforms at BrightOps: 09/2024 – 04/2026
-// • Led development of a production LLM-powered tutoring platform using TypeScript, React, Node, and Pinecone, serving 3,200 students with personalized recommendations.
-// • Implemented RAG retrieval over Postgres-backed student records and vector embeddings, reducing information lookup time by 62%.
-// • Integrated AI coding workflows and model evaluation pipelines using Claude Code, Cursor, and LangSmith, improving dev velocity by 42% and catching 88% of prompt regressions pre-release.
+Experience:
+Senior Full Stack Engineer at NIX United: 01/2022 – Present
+•  Designed and implemented a multi-party funds distribution system for insurance payments — “collect once, split many” model — ensuring accurate allocation and reconciliation.
+•  Built ASP.NET+ PostgreSQL ledger modules to record balances, transactions, returns, and adjustments with double-entry principles.
+•  Integrated LangChain with OpenAI APIs to build a context-aware retrieval system for analytical queries
+•  Integrated ACH debit/credit APIs from payment providers to collect premiums and disburse claims.
+•  Designed webhook-driven systems to process asynchronous events (ACH returns, disputes, settlement confirmations) with retry queues and error handling.
+•  Designed unit and end-to-end tests using Jest, Supertest, and Playwright, ensuring high code coverage
+•  Developed GraphQL and REST APIs for linking accounts, previewing payment plans, executing payments, and providing real-time statuses to dashboards.
 
+Senior Full Stack Engineer at CrunchCode: 03/2018 – 12/2021
+•  Architected and built a telehealth SaaS platform with integrated payments and billing flows for consultations, including refunds, receipts, and audit trails using ASP.NET.
+•  Designed PostgreSQL-based transaction ledgers to model balances, payouts, and adjustments per patient and doctor.
+•  Integrated with Stripe Connect and ACH debit APIs for collecting fees, distributing payments to clinicians, and reconciling settlements.
+•  Implemented webhooks for payment events (failed charges, refunds, disputes) and built idempotent retry queues using RabbitMQ.
+•  Developed Angular dashboards for displaying invoices, receipts, and settlement histories to both patients and clinicians.
+•  Conducted end-to-end payment testing with Cypress and automated reconciliation reports for finance teams.
 
-// Senior Full Stack Engineer at Nordstrom: 05/2021 – 07/2024
-// • Built AI/ML-enabled retrieval and RAG features for healthcare applications, handling 120k patient records with Node, TypeScript, and Postgres.
-// • Automated LLM evaluation and regression tests, catching critical hallucination issues before production.
-// • Scaled microservices on AWS ECS/EKS for 2x concurrency spikes, maintaining 99.95% uptime, while securing APIs with OAuth2, JWT, and role-based access control.
+Full Stack Engineer at Zapier: 02/2014 – 02/2018
+•  Built B2B financial and logistics applications with payment gateways and multi-currency reconciliation workflows.
+•  Implemented Express.js and .NET APIs to handle payment flows, settlement batching, and refund processing.
+•  Designed accounting-style schemas in MySQL/Oracle for tracking credits, debits, and reversals across multiple accounts.
+•  Worked with Oracle to implement financial reporting features and ETL logic
+•  Built React dashboards for finance teams to view real-time transaction statuses, dispute handling, and reconciliation reports.
+•  Integrated ACH debit/credit APIs from sponsor banks, handling returns and implementing OFAC validation.
 
+Junior Web Developer at Emergent Software : 06/2012 – 12/2013
+•  Supported a healthcare billing platform integrating EMR systems and payment rails for patients and providers.
+•  Built ASP.NET APIs for processing payments, generating receipts, and handling asynchronous status updates from payment processors.
+•  Stored patient history and event logs in MySQL, with encrypted identifiers for privacy
+•  Implemented secure middleware for API token validation, audit logging, and encrypted patient identifiers.
 
-// Full Stack Engineer - AI/ML Integrations at Zapier: 01/2019 – 02/2021
-// • Developed LLM-assisted credit workflow automation, cutting manual processing time by 37% across 4 teams.
-// • Built secure Postgres schemas and transactional APIs for sensitive financial events, enabling 24x7 reconciliation.
-// • Ensured secure AI/ML integration with encryption, logging, and IAM policies, passing internal audits with zero critical findings.
-
-
-// Full Stack Software Engineer - Cloud & Backend at Calendly : 11/2017 – 11/2018
-// • Engineered backend-integrated workflows in Node and Python for fintech payments processing $25M+ monthly.
-// • Deployed containerized services with Docker/Kubernetes, achieving 99.9% SLA for core transactions.
-// • Rewrote legacy React/TypeScript onboarding flow, increasing activation rate by 14% and cutting frontend bundle size by 36%.
-
-
-// Junior Software Engineer - Frontend & Backend at Cognizant : 08/2016 – 09/2017
-// • Delivered React-based frontend features for HCM and analytics platforms used by 2,500+ enterprise customers.
-// • Standardized CSS and converted legacy widgets to TypeScript components, improving compile-time safety and reducing runtime bugs by 39%.
-// • Assisted backend teams with API contracts and Postgres optimization, improving end-to-end page rendering by 24%.
-
-
-// Education:
-// Bachelor of Science (BS), Information Technology | 2012 – 2016
-// Jones College
-// `
-//   },
+Education:
+Bachelor of Computer Science
+University of Florida | 2018 – 2012
+`
+  },
 //   {
 //     name: 'Kevin Patel*',
 //     themeId: 'citrus',
