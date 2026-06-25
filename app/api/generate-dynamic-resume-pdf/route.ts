@@ -4,7 +4,72 @@ import { getProfileByName } from '@/app/data/baseResumes';
 import { getResumeTheme } from '@/app/data/resumeThemes';
 import { renderResumePdf } from '@/app/lib/renderResumePdf';
 
+const JOB_LINE_REGEX = / at .+:.+/;
+
+/** Count employer entries between Experience: and Education: in the base resume. */
+export function countExperienceCompanies(baseResume: string): number {
+  const experienceMatch = baseResume.match(/^Experience:\s*$/im);
+  if (!experienceMatch || experienceMatch.index === undefined) return 3;
+
+  const afterExperience = baseResume.slice(experienceMatch.index + experienceMatch[0].length);
+  const educationMatch = afterExperience.match(/^Education:\s*$/im);
+  const experienceSection =
+    educationMatch && educationMatch.index !== undefined
+      ? afterExperience.slice(0, educationMatch.index)
+      : afterExperience;
+
+  const count = experienceSection
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line && JOB_LINE_REGEX.test(line)).length;
+
+  return count >= 4 ? 4 : 3;
+}
+
+function getExperiencePromptRules(companyCount: number) {
+  if (companyCount >= 4) {
+    return {
+      companyCount: 4,
+      inclusion: `- Always include exactly four companies in newest-to-oldest order.
+- Use all four companies from the profile. Do not omit, merge, or return fewer than four companies even if older experience is less relevant.`,
+      bullets: `- Exact bullet counts (hard requirement):
+  • First company (most recent): exactly 8 bullet points
+  • Second company: exactly 8 bullet points
+  • Third company: exactly 6 bullet points
+  • Fourth company (oldest): exactly 6 bullet points`,
+      seniority: `- The most recent role must be a senior role.
+- The second role must be mid-level only (not junior and not senior).
+- The third role must not be junior or intern.
+- Only the oldest (fourth) role may be junior; never use intern titles anywhere.
+- If the oldest role lasted multiple years, use a junior engineer title rather than an intern title.`,
+      tailoringOlderRoles:
+        '- The older roles beyond the two most recent can use broader or less directly related tech stacks if that sounds more natural.',
+      verification: `- Verify summary word count (60-80), bullet counts (8/8/6/6), four companies present, and header title matches first role title`,
+    };
+  }
+
+  return {
+    companyCount: 3,
+    inclusion: `- Always include exactly three companies in newest-to-oldest order.
+- Use all three companies from the profile. Do not omit, merge, or return fewer than three companies even if older experience is less relevant.`,
+    bullets: `- Exact bullet counts (hard requirement):
+  • First company (most recent): exactly 8 bullet points
+  • Second company: exactly 8 bullet points
+  • Third company (oldest): exactly 6 bullet points`,
+    seniority: `- The most recent role must be a senior role.
+- Only the oldest role may be junior; never use intern titles anywhere.
+- The second role must be mid-level only (not junior and not senior).
+- The second-oldest role must not be junior or intern.
+- If the oldest role lasted multiple years, use a junior engineer title rather than an intern title.`,
+    tailoringOlderRoles:
+      '- The oldest two roles can use broader or less directly related tech stacks if that sounds more natural.',
+    verification: `- Verify summary word count (60-80), bullet counts (8/8/6), three companies present, and header title matches first role title`,
+  };
+}
+
 function buildPrompt(baseResume: string, jobDescription: string) {
+  const experienceRules = getExperiencePromptRules(countExperienceCompanies(baseResume));
+
   return `
 You are a professional resume writer for software engineers.
 
@@ -33,12 +98,8 @@ SUMMARY
 - Use 3-4 full sentences, not a short 1-2 sentence stub.
 
 PROFESSIONAL EXPERIENCE
-- Always include exactly three companies in newest-to-oldest order.
-- Use all three companies from the profile. Do not omit, merge, or return fewer than three companies even if older experience is less relevant.
-- Exact bullet counts (hard requirement):
-  • First company (most recent): exactly 8 bullet points
-  • Second company: exactly 8 bullet points
-  • Third company (oldest): exactly 6 bullet points
+${experienceRules.inclusion}
+${experienceRules.bullets}
 
 Each bullet point must:
 - Be detailed and grounded in real hands-on experience
@@ -58,21 +119,21 @@ First bullet of the first (most recent) company must:
 JOB TITLES AND SENIORITY
 - Experience descriptions must feel personal, practical, and implementation-focused.
 - Job titles may be slightly rewritten if needed.
-- The most recent role must be a senior role.
-- Only the oldest role may be junior; never use intern titles anywhere.
-- The second role must be mid-level only (not junior and not senior).
-- The second-oldest role must not be junior or intern.
-- If the oldest role lasted multiple years, use a junior engineer title rather than an intern title.
+${experienceRules.seniority}
 - Keep title seniority progression natural from newest to oldest.
 - Treat Engineer as a higher generic title than Developer.
 - Do not make an older role Engineer if a more recent role is only Developer, unless the older Engineer title is explicitly junior.
-- Example progression: Senior Software Engineer -> Software Engineer -> Junior Software Engineer
+- Example progression (${experienceRules.companyCount} companies): ${
+    experienceRules.companyCount >= 4
+      ? 'Senior Software Engineer -> Software Engineer -> Software Engineer -> Junior Software Engineer'
+      : 'Senior Software Engineer -> Software Engineer -> Junior Software Engineer'
+  }
 - The header job title (first line) and the first company job title must be exactly the same text. If you normalize one, normalize both.
 - Use a common, natural senior engineer title for the CV headline (e.g. Senior Backend Engineer, Senior Software Engineer, Senior Full Stack Engineer). Do not mirror rare or niche JD titles. Do not use overly long titles.
 
 TAILORING BALANCE
 - Do not over-tailor the resume.
-- The oldest two roles can use broader or less directly related tech stacks if that sounds more natural.
+${experienceRules.tailoringOlderRoles}
 - Do not make the job title too similar to the JD when the JD wording is rare or unusually specific; normalize first.
 - Never let the header title and the first company title differ.
 - Make everything sound natural, believable, and human-written instead of aggressively tailored.
@@ -102,7 +163,7 @@ Before outputting:
 - Smooth transitions between bullets within each job
 - Reduce redundancy across jobs
 - Re-read aloud for natural flow
-- Verify summary word count (60-80), bullet counts (8/8/6), three companies present, and header title matches first role title
+${experienceRules.verification}
 
 Output the complete tailored resume as plain text only, following the base resume's exact structure and formatting. Update content only; preserve the template layout. No markdown code fences, no HTML, and no extra explanation.
   `;
