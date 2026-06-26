@@ -116,12 +116,12 @@ SUMMARY
 - Must stay realistic and human-written.
 
 SKILLS SECTION
-- Exactly 4 categories (no more, no fewer).
+- Exactly 5 categories (no more, no fewer).
 - Each category must be one single line only.
 - Each category must include 5–7 skills.
 - No repetition of identical tools across categories.
 - No keyword stuffing.
-- Use appropriate grouping depending on role type (Backend, Full Stack, AI, DevOps, Data, or Frontend), but always exactly 4 categories.
+- Use appropriate grouping depending on role type (Backend, Full Stack, AI, DevOps, Data, or Frontend), but always exactly 5 categories.
 - Use a single-column layout with bullet prefixes (•).
 - Place Skills immediately after Summary and before Experience (match base resume section naming, e.g. "Technical Skills:").
 
