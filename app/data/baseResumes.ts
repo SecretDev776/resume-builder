@@ -393,7 +393,7 @@ Junior Web Developer at Emergent Software : 06/2012 – 12/2013
 
 Education:
 Bachelor of Computer Science
-University of Florida | 2018 – 2012
+University of Florida | 2008 – 2012
 `
   },
 //   {
