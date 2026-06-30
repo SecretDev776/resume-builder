@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server';
-import { OpenAI } from 'openai';
+import OpenAI from 'openai';
+import type { ChatCompletionCreateParamsNonStreaming } from 'openai/resources/chat/completions';
 import { getProfileByName } from '@/app/data/baseResumes';
 import { getResumeTheme } from '@/app/data/resumeThemes';
 import { buildResumePrompt } from '@/app/lib/resumePrompt';
@@ -62,19 +63,34 @@ export async function POST(req: NextRequest) {
 
         const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
         const prompt = buildResumePrompt(baseResume, jobDescription);
+        const model = process.env.OPENAI_VERSION || 'gpt-5-mini';
+        const reasoningEffort =
+          process.env.OPENAI_REASONING_EFFORT === 'low' ||
+          process.env.OPENAI_REASONING_EFFORT === 'medium' ||
+          process.env.OPENAI_REASONING_EFFORT === 'high'
+            ? process.env.OPENAI_REASONING_EFFORT
+            : 'minimal';
 
-        const completion = await openai.chat.completions.create({
-          model: process.env.OPENAI_VERSION || 'gpt-3.5-turbo',
+        const completionParams: ChatCompletionCreateParamsNonStreaming & {
+          reasoning_effort?: 'minimal' | 'low' | 'medium' | 'high';
+        } = {
+          model,
           messages: [
             { role: 'system', content: 'You are a helpful assistant for creating professional resume content.' },
             { role: 'user', content: prompt },
           ],
           max_completion_tokens: 8000,
-        });
+          stream: false,
+          ...(model.startsWith('gpt-5') ? { reasoning_effort: reasoningEffort } : {}),
+        };
+
+        const completion = await openai.chat.completions.create(completionParams);
 
         const tailoredResume = completion.choices[0].message.content || '';
 
         console.log('=== TOKEN USAGE ===');
+        console.log('Model:', model);
+        console.log('Reasoning effort:', model.startsWith('gpt-5') ? reasoningEffort : 'n/a');
         console.log('Prompt Tokens:', completion.usage?.prompt_tokens);
         console.log('Completion Tokens:', completion.usage?.completion_tokens);
         console.log('Total Tokens:', completion.usage?.total_tokens);
